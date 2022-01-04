@@ -1,3 +1,4 @@
+using System.Threading.Tasks;
 using Code.Configs;
 using Code.MonoBehavioursComponent;
 using Leopotam.Ecs;
@@ -20,7 +21,7 @@ namespace Code.LevelsLoader
             _changeLevelService = new ChangeLevelService();
         }
 
-        public void Run()
+        public async void Run()
         {
             if (_signal.IsEmpty()) return;
             if (_level.IsValid())
@@ -29,13 +30,14 @@ namespace Code.LevelsLoader
                 _changeLevelService.ChangeLevel();
             }
             _level = Addressables.InstantiateAsync(_levels.Levels[_changeLevelService.CurrentLevel%_levels.Levels.Count]);
-            if (_level.IsDone)
-                InitializeLevelObject(_level.Result);
+            await _level.Task;
+            InitializeLevelObject(_level.Result);
         }
 
         private void InitializeLevelObject(GameObject level)
         {
             var levelObjects = level.GetComponentsInChildren<MonoBehavioursEntity>();
+            Debug.Log(levelObjects.Length);
             foreach (var levelObject in levelObjects)
             {
                 levelObject.Initial(_world.NewEntity(), _world);

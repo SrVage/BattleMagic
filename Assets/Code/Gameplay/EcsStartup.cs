@@ -16,6 +16,7 @@ namespace Code.Gameplay {
 
         [SerializeField] private LevelList _levels;
         [SerializeField] private UIScreen _uiScreen;
+        [SerializeField] private PlayerCfg _playerCfg;
         void Start () {
             _world = new EcsWorld ();
             _systems = new EcsSystems (_world);
@@ -28,9 +29,11 @@ namespace Code.Gameplay {
                 .Add (new ChangeStateSystem ())
                 .Add(new StateMachine())
                 .Add(new LoadLevelSystem())
+                .Add(new CreatePlayerSystem())
                 .Add(new ChangeScreenSystem())
                 .Add(new JoystickInputSystem())
-                
+                .Add(new PlayerMoveSystem())
+
                 .OneFrame<ChangeState> ()
                 .OneFrame<LoadLevelSignal> ()
                 .OneFrame<TapToStart>()
@@ -38,6 +41,7 @@ namespace Code.Gameplay {
                 
                 .Inject (_levels)
                 .Inject(_uiScreen)
+                .Inject(_playerCfg)
                 .Init ();
         }
         
