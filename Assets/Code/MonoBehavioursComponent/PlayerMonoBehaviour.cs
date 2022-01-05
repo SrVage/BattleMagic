@@ -9,6 +9,7 @@ namespace Code.MonoBehavioursComponent
     public class PlayerMonoBehaviour:MonoBehavioursEntity
     {
         [SerializeField] private Fraction _fraction;
+        [SerializeField] private Rigidbody _rigidbody;
         public override void Initial(EcsEntity entity, EcsWorld world)
         {
             base.Initial(entity, world);
@@ -16,6 +17,7 @@ namespace Code.MonoBehavioursComponent
             {
                 case Fraction.Player:
                     entity.Get<Player>();
+                    entity.Get<Physic>().Value = _rigidbody;
                     break;
                 case Fraction.Enemy:
                     break;

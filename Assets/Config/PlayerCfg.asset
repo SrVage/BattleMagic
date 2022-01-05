@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: PlayerCfg
   m_EditorClassIdentifier: 
   Prefab: {fileID: 2119553253230231533, guid: 3274f3769a1ea44fe85bdf29832981fa, type: 3}
-  Speed: 0.05
+  Speed: 3

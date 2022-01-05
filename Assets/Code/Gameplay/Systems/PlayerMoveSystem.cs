@@ -9,7 +9,8 @@ namespace Code.Gameplay.Systems
 {
     public class PlayerMoveSystem:IEcsRunSystem
     {
-        private readonly EcsFilter<GameObjectRef, Player> _player;
+        private const float DeadZone = 0.1f;
+        private readonly EcsFilter<GameObjectRef, Player, Physic> _player;
         private readonly EcsFilter<InputMovementVector> _input;
         private readonly PlayerCfg _playerCfg;
         public void Run()
@@ -22,10 +23,13 @@ namespace Code.Gameplay.Systems
                 foreach (var jdx in _player)
                 {
                     ref var playerTransform = ref _player.Get1(jdx).Transform;
-                    Vector3 playerVector = new Vector3(vector.x * _playerCfg.Speed, playerTransform.position.y,
+                    Vector3 playerVector = new Vector3(vector.x * _playerCfg.Speed, 0,
                         vector.y * _playerCfg.Speed);
-                    playerTransform.position += playerVector;
-                    playerTransform.rotation = Quaternion.LookRotation(playerVector);
+                    if (playerVector.sqrMagnitude<DeadZone)
+                        break;
+                    playerTransform.rotation = Quaternion.LookRotation(playerVector, Vector3.up);
+                    ref var playerRB = ref _player.Get3(jdx).Value;
+                    playerRB.velocity= new Vector3(playerVector.x, 0, playerVector.z);
                 }
             }
         }
