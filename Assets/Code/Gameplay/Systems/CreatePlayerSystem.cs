@@ -4,6 +4,7 @@ using Code.Gameplay.Components;
 using Code.MonoBehavioursComponent;
 using Leopotam.Ecs;
 using UnityEngine;
+using Camera = Code.Components.Camera;
 
 namespace Code.Gameplay.Systems
 {
@@ -11,6 +12,7 @@ namespace Code.Gameplay.Systems
     {
         private readonly EcsFilter<SpawnPoint> _spawnPoint;
         private readonly EcsFilter<Player> _player;
+        private readonly EcsFilter<Camera> _camera;
         private readonly EcsWorld _world;
         private readonly PlayerCfg _playerCfg;
         
@@ -24,9 +26,14 @@ namespace Code.Gameplay.Systems
                 ref var spawnFraction = ref _spawnPoint.Get1(idx).Fraction;
                 if (spawnFraction == Fraction.Player)
                 {
-                    GameObject.Instantiate(_playerCfg.Prefab, spawnPoint, Quaternion.identity).GetComponent<MonoBehavioursEntity>().Initial(_world.NewEntity(), _world);
+                    var playerGO = GameObject.Instantiate(_playerCfg.Prefab, spawnPoint, Quaternion.identity);
+                    playerGO.GetComponent<MonoBehavioursEntity>().Initial(_world.NewEntity(), _world);
+                    foreach (var jdx in _camera)
+                    {
+                        ref var camera = ref _camera.Get1(jdx).Value;
+                        camera.Follow = playerGO.transform;
+                    }
                 }
-
                 ref var entity = ref _spawnPoint.GetEntity(idx);
                 entity.Destroy();
             }

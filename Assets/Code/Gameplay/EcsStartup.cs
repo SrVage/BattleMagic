@@ -26,6 +26,7 @@ namespace Code.Gameplay {
             Leopotam.Ecs.UnityIntegration.EcsSystemsObserver.Create (_systems);
 #endif
             _systems
+                .Add(new GameInitial())
                 .Add (new ChangeStateSystem ())
                 .Add(new StateMachine())
                 .Add(new LoadLevelSystem())
