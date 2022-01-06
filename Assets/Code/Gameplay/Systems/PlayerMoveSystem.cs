@@ -22,16 +22,26 @@ namespace Code.Gameplay.Systems
                 ref var vector = ref _input.Get1(idx).Value;
                 foreach (var jdx in _player)
                 {
-                    ref var playerTransform = ref _player.Get1(jdx).Transform;
                     Vector3 playerVector = new Vector3(vector.x * _playerCfg.Speed, 0,
                         vector.y * _playerCfg.Speed);
                     if (playerVector.sqrMagnitude<DeadZone)
                         break;
-                    playerTransform.rotation = Quaternion.LookRotation(playerVector, Vector3.up);
-                    ref var playerRB = ref _player.Get3(jdx).Value;
-                    playerRB.velocity= new Vector3(playerVector.x, 0, playerVector.z);
+                    RotatePlayer(jdx, playerVector);
+                    ChangeVelocity(jdx, playerVector);
                 }
             }
+        }
+
+        private void ChangeVelocity(int jdx, Vector3 playerVector)
+        {
+            ref var playerRB = ref _player.Get3(jdx).Value;
+            playerRB.velocity = new Vector3(playerVector.x, 0, playerVector.z);
+        }
+
+        private void RotatePlayer(int jdx, Vector3 playerVector)
+        {
+            ref var playerTransform = ref _player.Get1(jdx).Transform;
+            playerTransform.rotation = Quaternion.LookRotation(playerVector, Vector3.up);
         }
     }
 }

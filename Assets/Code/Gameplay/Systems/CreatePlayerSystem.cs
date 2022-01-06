@@ -26,17 +26,33 @@ namespace Code.Gameplay.Systems
                 ref var spawnFraction = ref _spawnPoint.Get1(idx).Fraction;
                 if (spawnFraction == Fraction.Player)
                 {
-                    var playerGO = GameObject.Instantiate(_playerCfg.Prefab, spawnPoint, Quaternion.identity);
-                    playerGO.GetComponent<MonoBehavioursEntity>().Initial(_world.NewEntity(), _world);
+                    var playerGO = InitializePlayer(spawnPoint);
                     foreach (var jdx in _camera)
                     {
-                        ref var camera = ref _camera.Get1(jdx).Value;
-                        camera.Follow = playerGO.transform;
+                        BindCamera(jdx, playerGO);
                     }
                 }
-                ref var entity = ref _spawnPoint.GetEntity(idx);
-                entity.Destroy();
+                DestroySpawnEntity(idx);
             }
+        }
+
+        private GameObject InitializePlayer(Vector3 spawnPoint)
+        {
+            GameObject player = GameObject.Instantiate(_playerCfg.Prefab, spawnPoint, Quaternion.identity);
+            player.GetComponent<MonoBehavioursEntity>().Initial(_world.NewEntity(), _world);
+            return player;
+        }
+
+        private void BindCamera(int jdx, GameObject playerGO)
+        {
+            ref var camera = ref _camera.Get1(jdx).Value;
+            camera.Follow = playerGO.transform;
+        }
+
+        private void DestroySpawnEntity(int idx)
+        {
+            ref var entity = ref _spawnPoint.GetEntity(idx);
+            entity.Destroy();
         }
     }
 }
