@@ -6,6 +6,7 @@ namespace Code.Configs
     public class PlayerCfg:ScriptableObject
     {
         public GameObject Prefab;
+        public float HealthPoint;
         public float Speed;
     }
 }

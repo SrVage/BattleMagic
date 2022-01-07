@@ -566,7 +566,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7777778, y: 1}
+    m_SensorSize: {x: 1.3333334, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -773,6 +773,7 @@ MonoBehaviour:
   _levels: {fileID: 11400000, guid: 9ff90c9b66ad36c46a4db84446a9ac06, type: 2}
   _uiScreen: {fileID: 11400000, guid: 99a8abbebb9b847798e15e57362e385f, type: 2}
   _playerCfg: {fileID: 11400000, guid: daa053bb81ba64a4897af7924f7e52e9, type: 2}
+  _bulletsCfg: {fileID: 11400000, guid: eb87cbd82ec9b42e1a016cc8ed8f3945, type: 2}
 --- !u!4 &2047205513
 Transform:
   m_ObjectHideFlags: 0

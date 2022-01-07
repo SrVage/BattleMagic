@@ -39,7 +39,9 @@ namespace Code.Gameplay.Systems
         private GameObject InitializePlayer(Vector3 spawnPoint)
         {
             GameObject player = GameObject.Instantiate(_playerCfg.Prefab, spawnPoint, Quaternion.identity);
-            player.GetComponent<MonoBehavioursEntity>().Initial(_world.NewEntity(), _world);
+            var entity = _world.NewEntity();
+            player.GetComponent<MonoBehavioursEntity>().Initial(entity, _world);
+            entity.Get<HealthPoint>().Value = _playerCfg.HealthPoint;
             return player;
         }
 

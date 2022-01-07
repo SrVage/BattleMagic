@@ -9,9 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 127419e75ac34cd89ee368eeedbd0abf, type: 3}
-  m_Name: PlayerCfg
+  m_Script: {fileID: 11500000, guid: cfd09e7559a34a0e84e3ab1b55bf414f, type: 3}
+  m_Name: BulletCfg
   m_EditorClassIdentifier: 
-  Prefab: {fileID: 2119553253230231533, guid: 3274f3769a1ea44fe85bdf29832981fa, type: 3}
-  HealthPoint: 100
-  Speed: 3
+  Bullets:
+  - Prefab: {fileID: 5020549259188945553, guid: ed27511340c8d4d3b8ed7adf947c6029, type: 3}
+    Damage: 3
+    ReloadTime: 1

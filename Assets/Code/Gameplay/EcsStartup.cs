@@ -1,3 +1,4 @@
+using Code.Components;
 using Code.Configs;
 using Code.Gameplay.Components;
 using Code.Gameplay.Systems;
@@ -17,6 +18,7 @@ namespace Code.Gameplay {
         [SerializeField] private LevelList _levels;
         [SerializeField] private UIScreen _uiScreen;
         [SerializeField] private PlayerCfg _playerCfg;
+        [SerializeField] private BulletsCfg _bulletsCfg;
         void Start () {
             _world = new EcsWorld ();
             _systems = new EcsSystems (_world);
@@ -33,20 +35,27 @@ namespace Code.Gameplay {
                 .Add(new CreatePlayerSystem())
                 .Add(new ChangeScreenSystem())
                 .Add(new JoystickInputSystem())
+                .Add(new CreateBulletSystem())
                 .Add(new PlayerMoveSystem())
+                .Add(new DamageHandlerSystem())
 
                 .OneFrame<ChangeState> ()
                 .OneFrame<LoadLevelSignal> ()
                 .OneFrame<TapToStart>()
                 .OneFrame<InputMovementVector>()
+                .OneFrame<Attack>()
+                .OneFrame<AttackTrigger>()
                 
                 .Inject (_levels)
                 .Inject(_uiScreen)
                 .Inject(_playerCfg)
+                .Inject(_bulletsCfg)
                 .Init ();
         }
         
-        void Update () {
+        void Update ()
+        {
+            TimeService.Time = Time.deltaTime;
             _systems?.Run ();
         }
 

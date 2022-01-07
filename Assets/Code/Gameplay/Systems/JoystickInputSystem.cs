@@ -1,3 +1,4 @@
+using Code.Components;
 using Code.Gameplay.Components;
 using Leopotam.Ecs;
 using UnityEngine;
@@ -8,6 +9,7 @@ namespace Code.Gameplay.Systems
     {
         private const string Horizontal = "Horizontal";
         private const string Vertical = "Vertical";
+        private const string Attack = "Attack";
 
         private readonly EcsWorld _world;
 
@@ -15,7 +17,10 @@ namespace Code.Gameplay.Systems
         {
             float xAxis = SimpleInput.GetAxis(Horizontal);
             float yAxis = SimpleInput.GetAxis(Vertical);
+            var attack = SimpleInput.GetButton(Attack);
             _world.NewEntity().Get<InputMovementVector>().Value = new Vector2(xAxis, yAxis);
+            if (attack)
+                _world.NewEntity().Get<Attack>();
         }
     }
 }
