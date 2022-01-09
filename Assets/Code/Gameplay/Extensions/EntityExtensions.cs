@@ -1,4 +1,4 @@
-using Code.MonoBehavioursComponent.Components;
+using Code.Abstractions;
 using Leopotam.Ecs;
 using UnityEngine;
 

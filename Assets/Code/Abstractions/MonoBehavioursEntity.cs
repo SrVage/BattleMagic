@@ -1,8 +1,7 @@
-﻿using Code.MonoBehavioursComponent.Components;
-using Leopotam.Ecs;
+﻿using Leopotam.Ecs;
 using UnityEngine;
 
-namespace Code.MonoBehavioursComponent
+namespace Code.Abstractions
 {
     public abstract class MonoBehavioursEntity:MonoBehaviour
     {

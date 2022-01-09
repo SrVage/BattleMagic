@@ -3,22 +3,41 @@
   <component name="ChangeListManager">
     <list default="true" id="f430fada-fc8b-46bf-8f08-4f337e69396a" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.BattleMagic/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BattleMagic/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Configs/PlayerCfg.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Configs/PlayerCfg.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Components/Components.asmdef" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Components/Components.asmdef" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Components/GameObjectRef.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Abstractions/GameObjectRef.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Components/GameObjectRef.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Abstractions/GameObjectRef.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Components/InputMovementVector.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Components/InputMovementVector.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Components/LoadLevelSignal.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Components/LoadLevelSignal.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Components/SpawnPoint.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Components/SpawnPoint.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Code/Gameplay/EcsStartup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Gameplay/EcsStartup.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Gameplay/Extensions/EntityExtensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Gameplay/Extensions/EntityExtensions.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Gameplay/Gameplay.asmdef" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Gameplay/Gameplay.asmdef" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Gameplay/Systems/CreateBulletSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Gameplay/Systems/CreateBulletSystem.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Code/Gameplay/Systems/CreatePlayerSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Gameplay/Systems/CreatePlayerSystem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Gameplay/Systems/DamageHandlerSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Gameplay/Systems/DamageHandlerSystem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Gameplay/Systems/GameInitial.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Gameplay/Systems/GameInitial.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Code/Gameplay/Systems/JoystickInputSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Gameplay/Systems/JoystickInputSystem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Gameplay/Systems/PlayerMoveSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Gameplay/Systems/PlayerMoveSystem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/LevelsLoader/LevelsLoader.asmdef" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/LevelsLoader/LevelsLoader.asmdef" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/LevelsLoader/LoadLevelSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/LevelsLoader/LoadLevelSystem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/MonoBehavioursComponent/BulletMonoBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/MonoBehavioursComponent/BulletMonoBehaviour.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/MonoBehavioursComponent/CameraMonoBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/MonoBehavioursComponent/CameraMonoBehaviour.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/MonoBehavioursComponent/EntityRef.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Abstractions/EntityRef.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/MonoBehavioursComponent/EntityRef.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Abstractions/EntityRef.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/MonoBehavioursComponent/MonoBehaviourComponent.asmdef" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/MonoBehavioursComponent/MonoBehaviourComponent.asmdef" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/MonoBehavioursComponent/MonoBehavioursEntity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Abstractions/MonoBehavioursEntity.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/MonoBehavioursComponent/MonoBehavioursEntity.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Abstractions/MonoBehavioursEntity.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Code/MonoBehavioursComponent/PlayerMonoBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/MonoBehavioursComponent/PlayerMonoBehaviour.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Characters/player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Characters/player.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/GameplayScreen.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/GameplayScreen.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/MonoBehavioursComponent/SpawnPointMonoBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/MonoBehavioursComponent/SpawnPointMonoBehaviour.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/MonoBehavioursComponent/TriggerListener.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/MonoBehavioursComponent/TriggerListener.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/StatesSwitcher/StateMachine.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/StatesSwitcher/StateMachine.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Logs/AssetImportWorker0-prev.log" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/AssetImportWorker0-prev.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Logs/AssetImportWorker0.log" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/AssetImportWorker0.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Logs/AssetImportWorker1-prev.log" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/AssetImportWorker1-prev.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Logs/AssetImportWorker1.log" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/AssetImportWorker1.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Logs/shadercompiler-AssetImportWorker0.log" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/shadercompiler-AssetImportWorker0.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler0.log" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler0.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler1.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler0.log" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,14 +100,27 @@
       <workItem from="1641210195383" duration="3640000" />
       <workItem from="1641309418991" duration="6899000" />
       <workItem from="1641564057009" duration="3623000" />
+      <workItem from="1641722481858" duration="4127000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
   <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="EditMode" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>

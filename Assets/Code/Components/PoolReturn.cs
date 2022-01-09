@@ -2,7 +2,8 @@ using Leopotam.Ecs;
 
 namespace Code.Components
 {
-    public struct LoadLevelSignal:IEcsIgnoreInFilter
+    public struct PoolReturn:IEcsIgnoreInFilter
     {
+        
     }
 }

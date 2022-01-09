@@ -1,6 +1,5 @@
 using Code.Components;
 using Code.Configs;
-using Code.Gameplay.Components;
 using Code.Gameplay.Systems;
 using Code.LevelsLoader;
 using Code.StatesSwitcher;
@@ -29,6 +28,7 @@ namespace Code.Gameplay {
 #endif
             _systems
                 .Add(new GameInitial())
+                .Add(new CreatePoolSystem())
                 .Add (new ChangeStateSystem ())
                 .Add(new StateMachine())
                 .Add(new LoadLevelSystem())
@@ -38,6 +38,7 @@ namespace Code.Gameplay {
                 .Add(new CreateBulletSystem())
                 .Add(new PlayerMoveSystem())
                 .Add(new DamageHandlerSystem())
+                .Add(new ReturnInPoolSystem())
 
                 .OneFrame<ChangeState> ()
                 .OneFrame<LoadLevelSignal> ()

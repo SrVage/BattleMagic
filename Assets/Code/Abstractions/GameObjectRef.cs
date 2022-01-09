@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Code.MonoBehavioursComponent.Components
+namespace Code.Abstractions
 {
     public struct GameObjectRef
     {

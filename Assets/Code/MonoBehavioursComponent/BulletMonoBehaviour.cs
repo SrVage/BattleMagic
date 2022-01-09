@@ -1,3 +1,4 @@
+using Code.Abstractions;
 using Code.Components;
 using Leopotam.Ecs;
 using UnityEngine;
@@ -11,6 +12,7 @@ namespace Code.MonoBehavioursComponent
         {
             base.Initial(entity, world);
             entity.Get<Physic>().Value = _rigidbody;
+            entity.Get<InPool>();
             gameObject.AddComponent<TriggerListener>().Initial(world, entity);
         }
     }

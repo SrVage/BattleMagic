@@ -1,7 +1,6 @@
+using Code.Abstractions;
 using Code.Components;
 using Code.Configs;
-using Code.Gameplay.Components;
-using Code.MonoBehavioursComponent.Components;
 using Leopotam.Ecs;
 using UnityEngine;
 

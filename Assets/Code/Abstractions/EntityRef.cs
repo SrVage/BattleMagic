@@ -1,8 +1,7 @@
-﻿using System;
-using Leopotam.Ecs;
+﻿using Leopotam.Ecs;
 using UnityEngine;
 
-namespace Code.MonoBehavioursComponent
+namespace Code.Abstractions
 {
     public class EntityRef:MonoBehaviour
     {

@@ -1,6 +1,6 @@
 using System;
+using Code.Abstractions;
 using Code.Components;
-using Code.Gameplay.Components;
 using Leopotam.Ecs;
 using UnityEngine;
 

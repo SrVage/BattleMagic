@@ -1,4 +1,5 @@
-using Code.Gameplay.Components;
+using Code.Abstractions;
+using Code.Components;
 using Leopotam.Ecs;
 using UnityEngine;
 

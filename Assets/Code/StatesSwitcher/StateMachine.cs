@@ -1,4 +1,4 @@
-using Code.LevelsLoader;
+using Code.Components;
 using Code.StatesSwitcher.States;
 using Leopotam.Ecs;
 

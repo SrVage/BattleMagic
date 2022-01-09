@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Code.Gameplay.Components
+namespace Code.Components
 {
     public struct InputMovementVector
     {

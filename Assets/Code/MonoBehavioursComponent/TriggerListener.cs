@@ -1,3 +1,4 @@
+using Code.Abstractions;
 using Code.Components;
 using Leopotam.Ecs;
 using UnityEngine;
@@ -21,6 +22,11 @@ namespace Code.MonoBehavioursComponent
             {
                 ref var entity = ref _world.NewEntity().Get<AttackTrigger>();
                 entity.Entity = other.GetComponentInParent<EntityRef>().Entity;
+                entity.Self = _entity;
+            }
+            else
+            {
+                ref var entity = ref _world.NewEntity().Get<AttackTrigger>();
                 entity.Self = _entity;
             }
         }

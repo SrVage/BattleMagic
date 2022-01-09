@@ -14,13 +14,14 @@ namespace Code.Gameplay.Systems
             {
                 ref var bulletEntity = ref _trigger.Get1(idx).Self;
                 ref var attackedEntity = ref _trigger.Get1(idx).Entity;
-                /*if (bulletEntity.IsAlive()||bulletEntity.IsNull())
-                    break;*/
                 ref var damage = ref bulletEntity.Get<Damage>().Value;
-                ref var hp =ref attackedEntity.Get<HealthPoint>().Value;
-                hp -= damage;
-                bulletEntity.DestroyWithGameObject();
-                Debug.Log(hp);
+                if (!attackedEntity.IsNull())
+                {
+                    ref var hp =ref attackedEntity.Get<HealthPoint>().Value; 
+                    hp -= damage; 
+                    Debug.Log(hp);
+                }
+                bulletEntity.Get<PoolReturn>();
             }
         }
     }
