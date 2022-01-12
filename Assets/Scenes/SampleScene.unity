@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657815, g: 0.49641192, b: 0.57481617, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -566,7 +566,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7777778, y: 1}
+    m_SensorSize: {x: 1.3333334, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -774,6 +774,7 @@ MonoBehaviour:
   _uiScreen: {fileID: 11400000, guid: 99a8abbebb9b847798e15e57362e385f, type: 2}
   _playerCfg: {fileID: 11400000, guid: daa053bb81ba64a4897af7924f7e52e9, type: 2}
   _bulletsCfg: {fileID: 11400000, guid: eb87cbd82ec9b42e1a016cc8ed8f3945, type: 2}
+  _enemyCfg: {fileID: 11400000, guid: 5b677cd768ccb4c1a9aa6d65642f9432, type: 2}
 --- !u!4 &2047205513
 Transform:
   m_ObjectHideFlags: 0

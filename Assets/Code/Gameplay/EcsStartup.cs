@@ -18,6 +18,7 @@ namespace Code.Gameplay {
         [SerializeField] private UIScreen _uiScreen;
         [SerializeField] private PlayerCfg _playerCfg;
         [SerializeField] private BulletsCfg _bulletsCfg;
+        [SerializeField] private EnemyCfg _enemyCfg;
         void Start () {
             _world = new EcsWorld ();
             _systems = new EcsSystems (_world);
@@ -33,6 +34,7 @@ namespace Code.Gameplay {
                 .Add(new StateMachine())
                 .Add(new LoadLevelSystem())
                 .Add(new CreatePlayerSystem())
+                .Add(new CreateEnemySystem())
                 .Add(new ChangeScreenSystem())
                 .Add(new JoystickInputSystem())
                 .Add(new CreateBulletSystem())
@@ -51,6 +53,7 @@ namespace Code.Gameplay {
                 .Inject(_uiScreen)
                 .Inject(_playerCfg)
                 .Inject(_bulletsCfg)
+                .Inject(_enemyCfg)
                 .Init ();
         }
         

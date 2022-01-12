@@ -9,7 +9,7 @@ namespace Code.Components
     }
     public struct SpawnPoint
     {
-        public Fraction Fraction;
         public Vector3 Position;
+        public int Number;
     }
 }

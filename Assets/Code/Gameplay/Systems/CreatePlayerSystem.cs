@@ -9,8 +9,8 @@ namespace Code.Gameplay.Systems
 {
     public class CreatePlayerSystem:IEcsRunSystem
     {
-        private readonly EcsFilter<SpawnPoint> _spawnPoint;
-        private readonly EcsFilter<Player> _player;
+        private readonly EcsFilter<SpawnPoint, Player> _spawnPoint;
+        private readonly EcsFilter<Player, HealthPoint> _player;
         private readonly EcsFilter<Camera> _camera;
         private readonly EcsWorld _world;
         private readonly PlayerCfg _playerCfg;
@@ -22,16 +22,18 @@ namespace Code.Gameplay.Systems
             foreach (var idx in _spawnPoint)
             {
                 ref var spawnPoint = ref _spawnPoint.Get1(idx).Position;
-                ref var spawnFraction = ref _spawnPoint.Get1(idx).Fraction;
-                if (spawnFraction == Fraction.Player)
+                ref var lives = ref _spawnPoint.Get1(idx).Number;
+                var playerGO = InitializePlayer(spawnPoint);
+                lives--;
+                if (lives <= 0)
                 {
-                    var playerGO = InitializePlayer(spawnPoint);
-                    foreach (var jdx in _camera)
-                    {
-                        BindCamera(jdx, playerGO);
-                    }
+                    ref var entity = ref _spawnPoint.GetEntity(idx);
+                    entity.Destroy();
                 }
-                DestroySpawnEntity(idx);
+                foreach (var jdx in _camera)
+                {
+                    BindCamera(jdx, playerGO);
+                }
             }
         }
 
@@ -48,12 +50,6 @@ namespace Code.Gameplay.Systems
         {
             ref var camera = ref _camera.Get1(jdx).Value;
             camera.Follow = playerGO.transform;
-        }
-
-        private void DestroySpawnEntity(int idx)
-        {
-            ref var entity = ref _spawnPoint.GetEntity(idx);
-            entity.Destroy();
         }
     }
 }
