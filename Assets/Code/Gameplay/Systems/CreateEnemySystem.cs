@@ -23,28 +23,42 @@ namespace Code.Gameplay.Systems
                 bool breakCycle = false;
                 foreach (var edx in _enemy)
                 {
-                    ref var enemyID = ref _enemy.Get1(sdx).SpawnID;
+                    ref var enemyID = ref _enemy.Get1(edx).SpawnID;
+                    Debug.Log("spawnID"+spawnID);
+                    Debug.Log("enemyID"+enemyID);
                     if (spawnID == enemyID)
                     {
                         breakCycle = true;
                         break;
                     }
                 }
+
                 if (breakCycle)
-                    break;
+                {
+                    Debug.Log("break"+spawnID);
+                    continue;
+                }
+                Debug.Log("instantiate"+spawnID);
                 ref var spawnPoint = ref _spawnPoint.Get1(sdx).Position;
                 ref var number = ref _spawnPoint.Get1(sdx).Number;
-                InitializeEnemy(spawnPoint, number);
+                InitializeEnemy(spawnPoint, spawnID);
+                number--;
+                if (number <= 0)
+                {
+                    ref var entity = ref _spawnPoint.GetEntity(sdx);
+                    entity.Destroy();
+                }
             }
         }
         
-        private void InitializeEnemy(Vector3 spawnPoint, int number)
+        private void InitializeEnemy(Vector3 spawnPoint, int id)
         {
-            var prefab = _enemyCfg.Enemies.Where(e => e.SpawnID == number).Select(p => p.Prefab).First();
+            var prefab = _enemyCfg.Enemies.Where(e => e.SpawnID == id).Select(p => p.Prefab).First();
             GameObject enemy = GameObject.Instantiate(prefab, spawnPoint, Quaternion.identity);
             var entity = _world.NewEntity();
             enemy.GetComponent<MonoBehavioursEntity>().Initial(entity, _world);
-            entity.Get<HealthPoint>().Value = _enemyCfg.Enemies.Where(e => e.SpawnID == number).Select(p => p.HealthPoint).First();
+            entity.Get<Enemy>().SpawnID = id;
+            entity.Get<HealthPoint>().Value = _enemyCfg.Enemies.Where(e => e.SpawnID == id).Select(p => p.HealthPoint).First();
         }
     }
 }

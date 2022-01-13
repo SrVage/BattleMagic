@@ -1,7 +1,6 @@
 using Code.Components;
 using Code.Gameplay.Extensions;
 using Leopotam.Ecs;
-using UnityEngine;
 
 namespace Code.Gameplay.Systems
 {
@@ -18,8 +17,11 @@ namespace Code.Gameplay.Systems
                 if (!attackedEntity.IsNull())
                 {
                     ref var hp =ref attackedEntity.Get<HealthPoint>().Value; 
-                    hp -= damage; 
-                    Debug.Log(hp);
+                    hp -= damage;
+                    if (hp <= 0)
+                    {
+                        attackedEntity.DestroyWithGameObject();
+                    }
                 }
                 bulletEntity.Get<PoolReturn>();
             }
