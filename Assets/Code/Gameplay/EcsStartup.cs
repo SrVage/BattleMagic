@@ -8,6 +8,7 @@ using Code.StatesSwitcher.States;
 using Code.UI.Systems;
 using Leopotam.Ecs;
 using UnityEngine;
+using Camera = UnityEngine.Camera;
 
 namespace Code.Gameplay {
     sealed class EcsStartup : MonoBehaviour {
@@ -41,6 +42,7 @@ namespace Code.Gameplay {
                 .Add(new PlayerMoveSystem())
                 .Add(new DamageHandlerSystem())
                 .Add(new ReturnInPoolSystem())
+                .Add(new DrawHealthSystem(Camera.main.transform))
 
                 .OneFrame<ChangeState> ()
                 .OneFrame<LoadLevelSignal> ()
