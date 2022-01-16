@@ -14,7 +14,7 @@ namespace Code.StatesSwitcher
         ConfigStates = 5,
         RestartStates = 6
     }
-    public class StateMachine:IEcsRunSystem, IEcsInitSystem
+    public sealed class StateMachine:IEcsRunSystem, IEcsInitSystem
     {
         private readonly EcsWorld _world;
         private readonly EcsFilter<GameState> _state;

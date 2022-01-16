@@ -4,7 +4,7 @@ using Leopotam.Ecs;
 
 namespace Code.Gameplay.Systems
 {
-    public class CreatePoolSystem:IEcsInitSystem
+    public sealed class CreatePoolSystem:IEcsInitSystem
     {
         private readonly EcsFilter<BulletPool> _pool;
         private readonly EcsWorld _world;

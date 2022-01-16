@@ -7,7 +7,7 @@ using UnityEngine;
 
 namespace Code.Gameplay.Systems
 {
-    public class CreateEnemySystem:IEcsRunSystem
+    public sealed class CreateEnemySystem:IEcsRunSystem
     {
         private readonly EcsFilter<SpawnPoint, Enemy> _spawnPoint;
         private readonly EcsFilter<Enemy, HealthPoint> _enemy;

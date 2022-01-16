@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace Code.Gameplay.Systems
 {
-    public class ReturnInPoolSystem:IEcsRunSystem
+    public sealed class ReturnInPoolSystem:IEcsRunSystem
     {
         private readonly EcsFilter<BulletPool> _pool;
         private readonly EcsFilter<PoolReturn, GameObjectRef, Physic> _return;

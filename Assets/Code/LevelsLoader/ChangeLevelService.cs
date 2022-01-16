@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace Code.LevelsLoader
 {
-    public class ChangeLevelService
+    public sealed class ChangeLevelService
     {
         private const string LevelNumber = "LevelNumber";
         public int CurrentLevel => _currentLevel;

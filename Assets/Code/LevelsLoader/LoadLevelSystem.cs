@@ -8,7 +8,7 @@ using UnityEngine.ResourceManagement.AsyncOperations;
 
 namespace Code.LevelsLoader
 {
-    public class LoadLevelSystem:IEcsRunSystem, IEcsInitSystem
+    public sealed class LoadLevelSystem:IEcsRunSystem, IEcsInitSystem
     {
         private readonly LevelList _levels;
         private readonly EcsFilter<LoadLevelSignal> _signal;

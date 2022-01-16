@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Code.Gameplay.Systems
 {
-    public class GameInitial:IEcsInitSystem
+    public sealed class GameInitial:IEcsInitSystem
     {
         private readonly EcsWorld _world;
         public void Init()

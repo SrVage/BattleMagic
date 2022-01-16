@@ -7,7 +7,7 @@ using Camera = Code.Components.Camera;
 
 namespace Code.Gameplay.Systems
 {
-    public class CreatePlayerSystem:IEcsRunSystem
+    public sealed class CreatePlayerSystem:IEcsRunSystem
     {
         private readonly EcsFilter<SpawnPoint, Player> _spawnPoint;
         private readonly EcsFilter<Player, HealthPoint> _player;

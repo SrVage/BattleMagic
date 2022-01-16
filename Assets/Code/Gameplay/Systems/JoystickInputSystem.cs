@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Code.Gameplay.Systems
 {
-    public class JoystickInputSystem:IEcsRunSystem
+    public sealed class JoystickInputSystem:IEcsRunSystem
     {
         private const string Horizontal = "Horizontal";
         private const string Vertical = "Vertical";

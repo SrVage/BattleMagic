@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace Code.Gameplay.Systems
 {
-    public class PlayerMoveSystem:IEcsRunSystem
+    public sealed class PlayerMoveSystem:IEcsRunSystem
     {
         private const float DeadZone = 0.1f;
         private readonly EcsFilter<GameObjectRef, Player, Physic> _player;

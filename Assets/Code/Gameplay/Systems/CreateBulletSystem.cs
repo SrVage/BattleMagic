@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace Code.Gameplay.Systems
 {
-    public class CreateBulletSystem:IEcsRunSystem
+    public sealed class CreateBulletSystem:IEcsRunSystem
     {
         private readonly EcsFilter<Attack> _attack;
         private readonly EcsFilter<AttackPoint, Player> _player;
