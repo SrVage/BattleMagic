@@ -37,7 +37,6 @@ namespace Code.LevelsLoader
         private void InitializeLevelObject(GameObject level)
         {
             var levelObjects = level.GetComponentsInChildren<MonoBehavioursEntity>();
-            Debug.Log(levelObjects.Length);
             foreach (var levelObject in levelObjects)
             {
                 levelObject.Initial(_world.NewEntity(), _world);

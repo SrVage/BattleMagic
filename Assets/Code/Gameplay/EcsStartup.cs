@@ -40,8 +40,11 @@ namespace Code.Gameplay {
                 .Add(new JoystickInputSystem())
                 .Add(new CreateBulletSystem())
                 .Add(new PlayerMoveSystem())
-                .Add(new DamageHandlerSystem())
+                .Add(new TriggerHandlerSystem())
+                .Add(new DamageHealthSystem())
+                .Add(new DestroyWallSystem())
                 .Add(new ReturnInPoolSystem())
+                .Add(new DelaySystem())
                 .Add(new DrawHealthSystem(Camera.main.transform))
 
                 .OneFrame<ChangeState> ()
