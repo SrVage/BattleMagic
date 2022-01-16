@@ -31,6 +31,7 @@ namespace Code.Gameplay {
             _systems
                 .Add(new GameInitial())
                 .Add(new CreatePoolSystem())
+                .Add(new WinConditionSystem())
                 .Add (new ChangeStateSystem ())
                 .Add(new StateMachine())
                 .Add(new LoadLevelSystem())

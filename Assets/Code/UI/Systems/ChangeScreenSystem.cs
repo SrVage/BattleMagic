@@ -1,4 +1,5 @@
 ﻿using System;
+using Code.Components;
 using Code.Configs;
 using Code.MonoBehavioursComponent;
 using Code.StatesSwitcher;
@@ -24,6 +25,7 @@ namespace Code.UI.Systems
             foreach (var state in _state)
             {
                 ref var st = ref _state.Get1(state).States;
+                Debug.Log(st);
                 switch (st)
                 {
                     case GameStates.StartState:
