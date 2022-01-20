@@ -5,7 +5,7 @@ using Leopotam.Ecs;
 
 namespace Code.Gameplay.Systems
 {
-    public class WinConditionSystem:IEcsRunSystem
+    public sealed class WinConditionSystem:IEcsRunSystem
     {
         private readonly EcsFilter<Enemy> _enemy;
         private readonly EcsFilter<PlayState> _play;

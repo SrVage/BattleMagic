@@ -10,6 +10,7 @@ namespace Code.Configs
         public class EnemyConfig
         {
             public GameObject Prefab;
+            public float Speed;
             public float HealthPoint;
             public int SpawnID;
         }

@@ -1,6 +1,7 @@
 using Code.Components;
 using Code.Configs;
 using Code.Gameplay.Systems;
+using Code.Gameplay.Systems.EnemySystems;
 using Code.LevelsLoader;
 using Code.StatesSwitcher;
 using Code.StatesSwitcher.Events;
@@ -47,6 +48,8 @@ namespace Code.Gameplay {
                 .Add(new ReturnInPoolSystem())
                 .Add(new DelaySystem())
                 .Add(new DrawHealthSystem(Camera.main.transform))
+                .Add(new SetTargetSystem())
+                .Add(new SetNavigationSystem())
 
                 .OneFrame<ChangeState> ()
                 .OneFrame<LoadLevelSignal> ()

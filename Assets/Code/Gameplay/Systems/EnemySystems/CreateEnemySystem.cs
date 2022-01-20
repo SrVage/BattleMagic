@@ -5,7 +5,7 @@ using Code.Configs;
 using Leopotam.Ecs;
 using UnityEngine;
 
-namespace Code.Gameplay.Systems
+namespace Code.Gameplay.Systems.EnemySystems
 {
     public sealed class CreateEnemySystem:IEcsRunSystem
     {
@@ -24,8 +24,6 @@ namespace Code.Gameplay.Systems
                 foreach (var edx in _enemy)
                 {
                     ref var enemyID = ref _enemy.Get1(edx).SpawnID;
-                    Debug.Log("spawnID"+spawnID);
-                    Debug.Log("enemyID"+enemyID);
                     if (spawnID == enemyID)
                     {
                         breakCycle = true;
@@ -35,10 +33,8 @@ namespace Code.Gameplay.Systems
 
                 if (breakCycle)
                 {
-                    Debug.Log("break"+spawnID);
                     continue;
                 }
-                Debug.Log("instantiate"+spawnID);
                 ref var spawnPoint = ref _spawnPoint.Get1(sdx).Position;
                 ref var number = ref _spawnPoint.Get1(sdx).Number;
                 InitializeEnemy(spawnPoint, spawnID);
@@ -57,8 +53,10 @@ namespace Code.Gameplay.Systems
             GameObject enemy = GameObject.Instantiate(prefab, spawnPoint, Quaternion.identity);
             var entity = _world.NewEntity();
             enemy.GetComponent<MonoBehavioursEntity>().Initial(entity, _world);
+            entity.Get<Navigation>().Speed = _enemyCfg.Enemies.Where(e => e.SpawnID == id).Select(p => p.Speed).First();
             entity.Get<Enemy>().SpawnID = id;
             entity.Get<HealthPoint>().Value = _enemyCfg.Enemies.Where(e => e.SpawnID == id).Select(p => p.HealthPoint).First();
+            entity.Get<NonTarget>();
         }
     }
 }

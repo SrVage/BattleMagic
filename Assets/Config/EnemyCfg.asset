@@ -14,8 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Enemies:
   - Prefab: {fileID: 2119553253230231533, guid: 6652d796dd39547e9b7371c45b7fff8f, type: 3}
+    Speed: 1.5
     HealthPoint: 80
     SpawnID: 2
   - Prefab: {fileID: 2119553253230231533, guid: 6652d796dd39547e9b7371c45b7fff8f, type: 3}
+    Speed: 2
     HealthPoint: 100
     SpawnID: 3
