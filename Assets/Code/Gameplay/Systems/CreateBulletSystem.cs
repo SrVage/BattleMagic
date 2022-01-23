@@ -36,7 +36,7 @@ namespace Code.Gameplay.Systems
                     ref var entity = ref bullet.GetComponent<EntityRef>().Entity;
                     entity.Get<Damage>().Value = _bulletsCfg.Bullets[0].Damage;
                     bullet.SetActive(true);
-                    entity.Get<Physic>().Value.AddForce(bullet.transform.forward*5, ForceMode.Impulse);
+                    entity.Get<Physic>().Value.AddForce(bullet.transform.forward*4, ForceMode.Impulse);
                     bullet.GetComponent<EntityRef>().Entity.Del<InPool>();
                 }
                 _reloadTime = _bulletsCfg.Bullets[0].ReloadTime;
