@@ -3,30 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="f430fada-fc8b-46bf-8f08-4f337e69396a" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.BattleMagic/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BattleMagic/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Configs/EnemyCfg.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Configs/EnemyCfg.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Code/Gameplay/EcsStartup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Gameplay/EcsStartup.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Gameplay/Systems/CreateEnemySystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Gameplay/Systems/EnemySystems/CreateEnemySystem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Gameplay/Systems/CreateEnemySystem.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Gameplay/Systems/EnemySystems/CreateEnemySystem.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Gameplay/Systems/WinConditionSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Gameplay/Systems/WinConditionSystem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/MonoBehavioursComponent/EnemyMonoBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/MonoBehavioursComponent/EnemyMonoBehaviour.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/NavMeshComponents/Editor/NavMeshAssetManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/NavMeshComponents/Editor/NavMeshAssetManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/NavMeshComponents/Editor/NavMeshComponentsGUIUtility.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/NavMeshComponents/Editor/NavMeshComponentsGUIUtility.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/NavMeshComponents/Editor/NavMeshLinkEditor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/NavMeshComponents/Editor/NavMeshLinkEditor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/NavMeshComponents/Editor/NavMeshModifierEditor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/NavMeshComponents/Editor/NavMeshModifierEditor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/NavMeshComponents/Editor/NavMeshModifierVolumeEditor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/NavMeshComponents/Editor/NavMeshModifierVolumeEditor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/NavMeshComponents/Editor/NavMeshSurfaceEditor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/NavMeshComponents/Editor/NavMeshSurfaceEditor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/NavMeshComponents/Scripts/NavMeshLink.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/NavMeshComponents/Scripts/NavMeshLink.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/NavMeshComponents/Scripts/NavMeshModifier.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/NavMeshComponents/Scripts/NavMeshModifier.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/NavMeshComponents/Scripts/NavMeshModifierVolume.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/NavMeshComponents/Scripts/NavMeshModifierVolume.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/NavMeshComponents/Scripts/NavMeshSurface.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/NavMeshComponents/Scripts/NavMeshSurface.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Characters/enemy.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Characters/enemy.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Levels/Level1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Levels/Level1.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Logs/AssetImportWorker0-prev.log" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/AssetImportWorker0-prev.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Logs/AssetImportWorker0.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Logs/AssetImportWorker1-prev.log" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/AssetImportWorker1-prev.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Logs/AssetImportWorker1.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Logs/shadercompiler-AssetImportWorker0.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,10 +12,6 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/Code/Gameplay/Systems/EnemySystems/CreateEnemySystem.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Code/Gameplay/Systems/EnemySystems/SetNavigationSystem.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -101,6 +74,7 @@
       <workItem from="1642667269482" duration="741000" />
       <workItem from="1642668414418" duration="1083000" />
       <workItem from="1642673466726" duration="3550000" />
+      <workItem from="1643180376978" duration="1478000" />
     </task>
     <servers />
   </component>

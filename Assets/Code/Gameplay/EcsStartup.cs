@@ -48,6 +48,7 @@ namespace Code.Gameplay {
                 .Add(new ReturnInPoolSystem())
                 .Add(new DelaySystem())
                 .Add(new DrawHealthSystem(Camera.main.transform))
+                .Add(new FindPlayerSystem())
                 .Add(new SetTargetSystem())
                 .Add(new SetNavigationSystem())
 
