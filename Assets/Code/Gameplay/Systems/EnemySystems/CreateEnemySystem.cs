@@ -2,6 +2,7 @@ using System.Linq;
 using Code.Abstractions;
 using Code.Components;
 using Code.Configs;
+using Code.StatesSwitcher.States;
 using Leopotam.Ecs;
 using UnityEngine;
 
@@ -11,10 +12,13 @@ namespace Code.Gameplay.Systems.EnemySystems
     {
         private readonly EcsFilter<SpawnPoint, Enemy> _spawnPoint;
         private readonly EcsFilter<Enemy, HealthPoint> _enemy;
+        private readonly EcsFilter<PlayState> _playState;
         private readonly EcsWorld _world;
         private readonly EnemyCfg _enemyCfg;
         public void Run()
         {
+            if (_playState.IsEmpty())
+                return;
             if (_spawnPoint.IsEmpty() || _enemy.GetEntitiesCount()>=_spawnPoint.GetEntitiesCount())
                 return;
             foreach (var sdx in _spawnPoint)
