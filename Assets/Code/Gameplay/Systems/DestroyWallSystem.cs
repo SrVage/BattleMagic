@@ -23,7 +23,7 @@ namespace Code.Gameplay.Systems
                 foreach (var physic in physics)
                 {
                     physic.isKinematic = false;
-                    physic.AddForce(physic.transform.localPosition*Random.Range(1,10), ForceMode.Impulse);
+                    physic.AddForce(physic.transform.localPosition*Random.Range(30,40), ForceMode.Impulse);
                 }
                 entity.Get<Delay>().Value = DelayTime;
                 entity.Del<Destroy>();
