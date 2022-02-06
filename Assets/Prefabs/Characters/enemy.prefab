@@ -99,6 +99,7 @@ MonoBehaviour:
   _attackPoint: {fileID: 3692776169629951731}
   _imageHP: {fileID: 3425490645030816556}
   _transformHP: {fileID: 4156414550341963909}
+  _animator: {fileID: 3339629852289331372}
   _agent: {fileID: -9214809807237339591}
 --- !u!195 &-9214809807237339591
 NavMeshAgent:

@@ -11,6 +11,7 @@ namespace Code.Gameplay.Systems
         private readonly EcsFilter<Attack> _attack;
         private readonly EcsFilter<AttackPoint, Player> _player;
         private readonly EcsFilter<BulletPool> _pool;
+        private readonly EcsFilter<AnimatorEvent> _event;
         private readonly BulletsCfg _bulletsCfg;
         private readonly EcsWorld _world;
         private float _reloadTime = 0;
@@ -26,6 +27,27 @@ namespace Code.Gameplay.Systems
                     break;
                 }
 
+                foreach (var pdx in _pool)
+                {
+                    _world.NewEntity().Get<StartShooting>();
+
+                    if (_event.IsEmpty())
+                        return;
+
+                    foreach (var x in _event)
+                    {
+                        Fire();
+                    }
+                }
+
+                _reloadTime = _bulletsCfg.Bullets[0].ReloadTime;
+            }
+        }
+
+        public void Fire()
+        {
+            foreach (var idx in _player)
+            {
                 foreach (var pdx in _pool)
                 {
                     ref IPool pool = ref _pool.Get1(pdx).Value;

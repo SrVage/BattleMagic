@@ -12,6 +12,7 @@ namespace Code.MonoBehavioursComponent
         [SerializeField] private Transform _attackPoint;
         [SerializeField] private Image _imageHP;
         [SerializeField] private Transform _transformHP;
+        [SerializeField] private Animator _animator;
         public override void Initial(EcsEntity entity, EcsWorld world)
         {
             base.Initial(entity, world);
@@ -19,6 +20,7 @@ namespace Code.MonoBehavioursComponent
             entity.Get<Physic>().Value = _rigidbody;
             entity.Get<HPView>().Value = _imageHP;
             entity.Get<HPView>().Transform = _transformHP;
+            entity.Get<AnimatorView>().Value = _animator;
         }
     }
 }

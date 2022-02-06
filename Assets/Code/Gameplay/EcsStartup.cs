@@ -51,6 +51,7 @@ namespace Code.Gameplay {
                 .Add(new FindPlayerSystem())
                 .Add(new SetTargetSystem())
                 .Add(new SetNavigationSystem())
+                .Add(new AnimationRunSystem())
 
                 .OneFrame<ChangeState> ()
                 .OneFrame<LoadLevelSignal> ()
@@ -58,6 +59,8 @@ namespace Code.Gameplay {
                 .OneFrame<InputMovementVector>()
                 .OneFrame<Attack>()
                 .OneFrame<AttackTrigger>()
+                .OneFrame<StartShooting>()
+                .OneFrame<AnimatorEvent>()
                 
                 .Inject (_levels)
                 .Inject(_uiScreen)
