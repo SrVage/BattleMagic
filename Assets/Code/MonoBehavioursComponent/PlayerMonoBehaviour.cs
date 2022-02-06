@@ -10,8 +10,8 @@ namespace Code.MonoBehavioursComponent
         {
             base.Initial(entity, world);
             entity.Get<Player>();
-            var animevent = gameObject.AddComponent<AnimatorEventMonoBehaviour>();
-            animevent.Initial(entity, world);
+            var animEvent = gameObject.AddComponent<AnimatorEventMonoBehaviour>();
+            animEvent.Initial(world);
         }
     }
 }
