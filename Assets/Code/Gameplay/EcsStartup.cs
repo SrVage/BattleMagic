@@ -40,6 +40,7 @@ namespace Code.Gameplay {
                 .Add(new CreateEnemySystem())
                 .Add(new ChangeScreenSystem())
                 .Add(new JoystickInputSystem())
+                .Add(new AttackHandlerSystem())
                 .Add(new CreateBulletSystem())
                 .Add(new PlayerMoveSystem())
                 .Add(new TriggerHandlerSystem())
@@ -52,6 +53,7 @@ namespace Code.Gameplay {
                 .Add(new SetTargetSystem())
                 .Add(new SetNavigationSystem())
                 .Add(new AnimationRunSystem())
+                
 
                 .OneFrame<ChangeState> ()
                 .OneFrame<LoadLevelSignal> ()
@@ -60,8 +62,7 @@ namespace Code.Gameplay {
                 .OneFrame<Attack>()
                 .OneFrame<AttackTrigger>()
                 .OneFrame<StartShooting>()
-                .OneFrame<AnimatorEvent>()
-                
+
                 .Inject (_levels)
                 .Inject(_uiScreen)
                 .Inject(_playerCfg)

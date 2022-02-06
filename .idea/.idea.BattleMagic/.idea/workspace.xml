@@ -3,8 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="f430fada-fc8b-46bf-8f08-4f337e69396a" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.BattleMagic/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BattleMagic/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/MonoBehavioursComponent/AnimatorEventMonoBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/MonoBehavioursComponent/AnimatorEventMonoBehaviour.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Character/Standing 1H Magic Attack 01.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Character/Standing 1H Magic Attack 01.fbx.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Gameplay/EcsStartup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Gameplay/EcsStartup.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Gameplay/Systems/CreateBulletSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Gameplay/Systems/CreateBulletSystem.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Code/MonoBehavioursComponent/PlayerMonoBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/MonoBehavioursComponent/PlayerMonoBehaviour.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,7 +86,7 @@
       <workItem from="1642673466726" duration="3550000" />
       <workItem from="1643180376978" duration="1478000" />
       <workItem from="1643460211380" duration="4377000" />
-      <workItem from="1644131290102" duration="13197000" />
+      <workItem from="1644131290102" duration="16162000" />
     </task>
     <servers />
   </component>
@@ -107,5 +110,24 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Code/MonoBehavioursComponent/AnimatorEventMonoBehaviour.cs</url>
+          <line>15</line>
+          <properties documentPath="C:\Unity Learn\Projects\BattleMagic\Assets\Code\MonoBehavioursComponent\AnimatorEventMonoBehaviour.cs" initialLine="15" containingFunctionPresentation="method 'Fire'">
+            <startOffsets>
+              <option value="266" />
+            </startOffsets>
+            <endOffsets>
+              <option value="320" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

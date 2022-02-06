@@ -8,7 +8,6 @@ namespace Code.Gameplay.Systems
 {
     public sealed class CreateBulletSystem:IEcsRunSystem
     {
-        private readonly EcsFilter<Attack> _attack;
         private readonly EcsFilter<AttackPoint, Player> _player;
         private readonly EcsFilter<BulletPool> _pool;
         private readonly EcsFilter<AnimatorEvent> _event;
@@ -18,8 +17,7 @@ namespace Code.Gameplay.Systems
         public void Run()
         {
             _reloadTime -= TimeService.Time;
-            if (_attack.IsEmpty())
-                return;
+            
             foreach (var idx in _player)
             {
                 if (_reloadTime > 0)
@@ -29,13 +27,13 @@ namespace Code.Gameplay.Systems
 
                 foreach (var pdx in _pool)
                 {
-                    _world.NewEntity().Get<StartShooting>();
-
                     if (_event.IsEmpty())
                         return;
 
                     foreach (var x in _event)
                     {
+                        ref var entity = ref _event.GetEntity(x);
+                        entity.Destroy();
                         Fire();
                     }
                 }
