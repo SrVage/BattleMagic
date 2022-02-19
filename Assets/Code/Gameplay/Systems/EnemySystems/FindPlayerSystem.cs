@@ -9,7 +9,9 @@ namespace Code.Gameplay.Systems.EnemySystems
     public class FindPlayerSystem:IEcsRunSystem
     {
         private const int VisibleDistance = 25;
-        private readonly EcsFilter<GameObjectRef, Enemy> _enemy;
+        private const float DelayTimeFind = 0.5f;
+        private const float DelayTimeLost = 5f;
+        private readonly EcsFilter<GameObjectRef, Enemy, Finish>.Exclude<Delay> _enemy;
         private readonly EcsFilter<GameObjectRef, Player> _player;
         
         public void Run()
@@ -26,8 +28,25 @@ namespace Code.Gameplay.Systems.EnemySystems
                         if (Vector3.Dot(normalize, enemyTransform.forward) > 0)
                         {
                             ref var entity = ref _enemy.GetEntity(edx);
-                            entity.Get<Target>().Value = playerTransform.position;
+                            entity.Get<Follow>().Value = playerTransform;
+                            entity.Get<Delay>().Value = DelayTimeFind;
+                            //entity.Del<Finish>();
+                            //entity.Get<Target>().Value = playerTransform.position;
                         }
+                        else
+                        {
+                            ref var entity = ref _enemy.GetEntity(edx);
+                            entity.Del<Follow>();
+                            entity.Get<Delay>().Value = DelayTimeLost;
+                            //entity.Del<Finish>();
+                        }
+                    }
+                    else
+                    {
+                        ref var entity = ref _enemy.GetEntity(edx);
+                        entity.Del<Follow>();
+                        entity.Get<Delay>().Value = DelayTimeLost;
+                        //entity.Del<Finish>();
                     }
                 }
             }

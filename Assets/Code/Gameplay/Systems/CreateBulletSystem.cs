@@ -42,7 +42,7 @@ namespace Code.Gameplay.Systems
             }
         }
 
-        public void Fire()
+        private void Fire()
         {
             foreach (var idx in _player)
             {

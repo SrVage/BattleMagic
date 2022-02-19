@@ -61,6 +61,7 @@ namespace Code.Gameplay.Systems.EnemySystems
             entity.Get<Enemy>().SpawnID = id;
             entity.Get<HealthPoint>().Value = _enemyCfg.Enemies.Where(e => e.SpawnID == id).Select(p => p.HealthPoint).First();
             entity.Get<NonTarget>();
+            entity.Get<Delay>().Value = 3f;
         }
     }
 }
