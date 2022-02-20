@@ -11,8 +11,8 @@ namespace Code.Gameplay.Systems.EnemySystems
         private const int VisibleDistance = 25;
         private const float DelayTimeFind = 0.5f;
         private const float DelayTimeLost = 5f;
-        private readonly EcsFilter<GameObjectRef, Enemy, Finish>.Exclude<Delay> _enemy;
-        private readonly EcsFilter<GameObjectRef, Player> _player;
+        private readonly EcsFilter<GameObjectRef, Enemy, Finish>.Exclude<Delay,Death> _enemy;
+        private readonly EcsFilter<GameObjectRef, Player>.Exclude<Death> _player;
         
         public void Run()
         {

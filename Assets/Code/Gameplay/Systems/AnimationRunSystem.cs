@@ -3,13 +3,15 @@ using Leopotam.Ecs;
 
 namespace Code.Gameplay.Systems
 {
-    public class AnimationRunSystem : IEcsRunSystem
+    public sealed class AnimationRunSystem : IEcsRunSystem
     {
-        private readonly EcsFilter<Physic, AnimatorView>.Exclude<StartShooting> _animator;
-        private readonly EcsFilter<AnimatorView, StartShooting> _shoot;
+        private readonly EcsFilter<Physic, AnimatorView>.Exclude<StartShooting, Death> _animator = null;
+        private readonly EcsFilter<AnimatorView, StartShooting>.Exclude<Death> _shoot = null;
+        private readonly EcsFilter<AnimatorView, Death> _death = null;
 
         private const string isStanding = "IsStanding";
-        private const string isAttack = "Attack";
+        private const string Attack = "Attack";
+        private const string Death = "Die";
         
         public void Run()
         {
@@ -30,8 +32,15 @@ namespace Code.Gameplay.Systems
                 ref var animator = ref _shoot.Get1(sdx).Value;
                 if (!_shoot.IsEmpty())
                 {
-                    animator.SetTrigger(isAttack);
+                    animator.SetTrigger(Attack);
                 }
+            }
+
+            foreach (var ddx in _death)
+            {
+                ref var animator = ref _death.Get1(ddx).Value;
+                animator.SetTrigger(Death);
+                _death.GetEntity(ddx).Del<AnimatorView>();
             }
         }
     }

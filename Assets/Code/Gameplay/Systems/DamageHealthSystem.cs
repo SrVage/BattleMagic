@@ -1,5 +1,4 @@
 using Code.Components;
-using Code.Gameplay.Extensions;
 using Leopotam.Ecs;
 
 namespace Code.Gameplay.Systems
@@ -18,7 +17,8 @@ namespace Code.Gameplay.Systems
                 entity.Del<Damage>();
                 if (hp <= 0)
                 {
-                    entity.DestroyWithGameObject();
+                    entity.Get<Death>();
+                    //entity.DestroyWithGameObject();
                 }
             }
         }

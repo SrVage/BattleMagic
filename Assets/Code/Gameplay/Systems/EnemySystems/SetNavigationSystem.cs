@@ -6,8 +6,9 @@ namespace Code.Gameplay.Systems.EnemySystems
 {
     public sealed class SetNavigationSystem:IEcsRunSystem
     {
-        private readonly EcsFilter<Navigation, Target, Finish>.Exclude<Follow> _navigation = null;
-        private readonly EcsFilter<Navigation, Target, Follow, Finish>  _navigationFollow = null;
+        private readonly EcsFilter<Navigation, Target, Finish>.Exclude<Follow, Death> _navigation = null;
+        private readonly EcsFilter<Navigation, Target, Follow, Finish> .Exclude<Death> _navigationFollow = null;
+        private readonly EcsFilter<Navigation, Death>  _death = null;
         private readonly EnemyCfg _enemyCfg = null;
         
         public void Run()
@@ -33,6 +34,12 @@ namespace Code.Gameplay.Systems.EnemySystems
                 _navigation.GetEntity(ndx).Del<Finish>();
                 //ref var entity = ref _navigation.GetEntity(ndx);
                 //entity.Del<Target>();
+            }
+            foreach (var ddx in _death)
+            {
+                ref var agent = ref _death.Get1(ddx).Value;
+                agent.isStopped = true;
+                _death.GetEntity(ddx).Del<Navigation>();
             }
         }
     }
