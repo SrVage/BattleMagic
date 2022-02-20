@@ -31,12 +31,12 @@ namespace Code.Gameplay.Systems
 
             foreach (var wdx in _wallDestroy)
             {
-                ref var physics = ref _wall.Get1(wdx).Values;
+                ref var physics = ref _wallDestroy.Get1(wdx).Values;
                 foreach (var physic in physics)
                 {
                     physic.isKinematic = true;
                 }
-                var entity = _wall.GetEntity(wdx);
+                var entity = _wallDestroy.GetEntity(wdx);
                 ref var transform = ref _wallDestroy.Get3(wdx).Transform;
                 transform.DOScale(Vector3.zero, 1f).OnComplete(() => entity.DestroyWithGameObject());
             }

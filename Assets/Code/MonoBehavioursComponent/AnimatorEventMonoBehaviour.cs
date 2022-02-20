@@ -13,6 +13,6 @@ public class AnimatorEventMonoBehaviour : MonoBehaviour
 
     public void Fire()
     {
-        var entity =  _world.NewEntity().Get<AnimatorEvent>();
+        _world.NewEntity().Get<AnimatorEvent>();
     }
 }

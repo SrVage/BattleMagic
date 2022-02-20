@@ -5,11 +5,11 @@ namespace Code.Gameplay.Systems
 {
     public class AnimationRunSystem : IEcsRunSystem
     {
-        private readonly EcsFilter<Physic, AnimatorView> _animator;
-        private readonly EcsFilter<StartShooting> _shoot;
+        private readonly EcsFilter<Physic, AnimatorView>.Exclude<StartShooting> _animator;
+        private readonly EcsFilter<AnimatorView, StartShooting> _shoot;
 
         private const string isStanding = "IsStanding";
-        private const string isAttack = "IsAttack";
+        private const string isAttack = "Attack";
         
         public void Run()
         {
@@ -23,15 +23,14 @@ namespace Code.Gameplay.Systems
                     animator.SetBool(isStanding, false);
                 }
                 else animator.SetBool(isStanding, true);
+            }
 
-                if (_shoot.IsEmpty())
+            foreach (var sdx in _shoot)
+            {
+                ref var animator = ref _shoot.Get1(sdx).Value;
+                if (!_shoot.IsEmpty())
                 {
-                    animator.SetBool(isAttack, false);
-                }
-
-                foreach (var j in _shoot)
-                {
-                    animator.SetBool(isAttack, true);
+                    animator.SetTrigger(isAttack);
                 }
             }
         }

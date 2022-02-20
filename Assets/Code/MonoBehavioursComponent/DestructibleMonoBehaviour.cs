@@ -11,6 +11,7 @@ namespace Code.MonoBehavioursComponent
         {
             base.Initial(entity, world);
             var rigidbodies = GetComponentsInChildren<Rigidbody>();
+            Debug.Log(rigidbodies.Length);
             entity.Get<Destructible>().Values = rigidbodies;
         }
     }
