@@ -6,6 +6,7 @@ namespace Code.Gameplay.Systems
     public sealed class AnimationRunSystem : IEcsRunSystem
     {
         private readonly EcsFilter<Physic, AnimatorView>.Exclude<StartShooting, Death> _animator = null;
+        private readonly EcsFilter<Navigation, AnimatorView>.Exclude<StartShooting, Death> _animatorEnemy = null;
         private readonly EcsFilter<AnimatorView, StartShooting>.Exclude<Death> _shoot = null;
         private readonly EcsFilter<AnimatorView, Death> _death = null;
 
@@ -25,6 +26,21 @@ namespace Code.Gameplay.Systems
                     animator.SetBool(isStanding, false);
                 }
                 else animator.SetBool(isStanding, true);
+            }
+
+            foreach (var adx in _animatorEnemy)
+            {
+                ref var navigation = ref _animatorEnemy.Get1(adx).Value;
+                ref var animator = ref _animatorEnemy.Get2(adx).Value;
+                if (navigation.isStopped)
+                {
+                    animator.SetBool(isStanding, true);
+                }
+                else
+                {
+                    animator.SetBool(isStanding, false);
+
+                }
             }
 
             foreach (var sdx in _shoot)

@@ -6,7 +6,7 @@ namespace Code.Gameplay.Systems
 {
     public sealed class DelaySystem:IEcsRunSystem
     {
-        private readonly EcsFilter<Delay> _delay;
+        private readonly EcsFilter<Delay>.Exclude<Enemy> _delay;
         public void Run()
         {
             foreach (var ddx in _delay)

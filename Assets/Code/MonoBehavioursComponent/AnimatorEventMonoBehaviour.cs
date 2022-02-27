@@ -5,14 +5,16 @@ using UnityEngine;
 public class AnimatorEventMonoBehaviour : MonoBehaviour
 {
     private EcsWorld _world;
+    private EcsEntity _entity;
 
-    public  void Initial(EcsWorld world)
+    public  void Initial(EcsWorld world, EcsEntity entity)
     {
         _world = world;
+        _entity = entity;
     }
 
     public void Fire()
     {
-        _world.NewEntity().Get<AnimatorEvent>();
+        _entity.Get<AnimatorEventAttack>();
     }
 }

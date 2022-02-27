@@ -1,7 +1,7 @@
 using Code.Components;
 using Leopotam.Ecs;
 
-namespace Code.Gameplay.Systems
+namespace Code.Gameplay.Systems.BulletSystems
 {
     public sealed class AttackHandlerSystem : IEcsRunSystem
     {
@@ -17,7 +17,6 @@ namespace Code.Gameplay.Systems
             {
                 _player.GetEntity(pdx).Get<StartShooting>();
             }
-           // _world.NewEntity().Get<StartShooting>();
         }
     }
 }

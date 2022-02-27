@@ -9,9 +9,10 @@ namespace Code.Gameplay.Systems.EnemySystems
     public class FindPlayerSystem:IEcsRunSystem
     {
         private const int VisibleDistance = 25;
-        private const float DelayTimeFind = 0.5f;
+        private const int BackVisibleDistance = 5;
+        private const float DelayTimeFind = 0.1f;
         private const float DelayTimeLost = 5f;
-        private readonly EcsFilter<GameObjectRef, Enemy, Finish>.Exclude<Delay,Death> _enemy;
+        private readonly EcsFilter<GameObjectRef, Enemy>.Exclude<Delay,Death> _enemy;
         private readonly EcsFilter<GameObjectRef, Player>.Exclude<Death> _player;
         
         public void Run()
@@ -25,9 +26,15 @@ namespace Code.Gameplay.Systems.EnemySystems
                     var vectorDirection = CalculateBetweenVector(playerTransform, enemyTransform, out Vector3 normalize);
                     if (vectorDirection.sqrMagnitude < VisibleDistance)
                     {
-                        if (Vector3.Dot(normalize, enemyTransform.forward) > 0)
+                        ref var entity = ref _enemy.GetEntity(edx);
+                        if (vectorDirection.sqrMagnitude < VisibleDistance / 2 &&
+                            Vector3.Dot(normalize, enemyTransform.forward) > 0)
                         {
-                            ref var entity = ref _enemy.GetEntity(edx);
+                            entity.Get<StartShooting>();
+                            entity.Get<Delay>().Value = DelayTimeLost;
+                        }
+                        if (Vector3.Dot(normalize, enemyTransform.forward) > 0 || vectorDirection.sqrMagnitude < BackVisibleDistance)
+                        {
                             entity.Get<Follow>().Value = playerTransform;
                             entity.Get<Delay>().Value = DelayTimeFind;
                             //entity.Del<Finish>();
@@ -35,7 +42,6 @@ namespace Code.Gameplay.Systems.EnemySystems
                         }
                         else
                         {
-                            ref var entity = ref _enemy.GetEntity(edx);
                             entity.Del<Follow>();
                             entity.Get<Delay>().Value = DelayTimeLost;
                             //entity.Del<Finish>();

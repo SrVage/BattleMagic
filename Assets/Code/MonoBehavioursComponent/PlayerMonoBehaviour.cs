@@ -11,7 +11,7 @@ namespace Code.MonoBehavioursComponent
             base.Initial(entity, world);
             entity.Get<Player>();
             var animEvent = gameObject.GetComponentInChildren<AnimatorEventMonoBehaviour>();
-            animEvent.Initial(world);
+            animEvent.Initial(world, entity);
         }
     }
 }

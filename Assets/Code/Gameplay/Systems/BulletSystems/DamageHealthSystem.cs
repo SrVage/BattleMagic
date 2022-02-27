@@ -1,7 +1,7 @@
 using Code.Components;
 using Leopotam.Ecs;
 
-namespace Code.Gameplay.Systems
+namespace Code.Gameplay.Systems.BulletSystems
 {
     public sealed class DamageHealthSystem:IEcsRunSystem
     {

@@ -2,7 +2,7 @@ using Code.Components;
 using Leopotam.Ecs;
 using UnityEngine;
 
-namespace Code.Gameplay.Systems
+namespace Code.Gameplay.Systems.PlayerSystems
 {
     public sealed class JoystickInputSystem:IEcsRunSystem
     {

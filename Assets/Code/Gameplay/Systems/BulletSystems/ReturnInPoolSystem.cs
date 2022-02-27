@@ -3,7 +3,7 @@ using Code.Components;
 using Leopotam.Ecs;
 using UnityEngine;
 
-namespace Code.Gameplay.Systems
+namespace Code.Gameplay.Systems.BulletSystems
 {
     public sealed class ReturnInPoolSystem:IEcsRunSystem
     {

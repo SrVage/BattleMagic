@@ -13,6 +13,8 @@ namespace Code.MonoBehavioursComponent
             base.Initial(entity, world);
             entity.Get<Enemy>();
             entity.Get<Navigation>().Value = _agent;
+            var animEvent = gameObject.GetComponentInChildren<AnimatorEventMonoBehaviour>();
+            animEvent.Initial(world, entity);
         }
     }
 }

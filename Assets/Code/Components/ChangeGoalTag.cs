@@ -2,7 +2,7 @@ using Leopotam.Ecs;
 
 namespace Code.Components
 {
-    public struct AnimatorEvent : IEcsIgnoreInFilter
+    public struct ChangeGoalTag:IEcsIgnoreInFilter
     {
         
     }

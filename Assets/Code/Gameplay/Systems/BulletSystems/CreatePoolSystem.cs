@@ -2,7 +2,7 @@ using Code.Components;
 using Code.Configs;
 using Leopotam.Ecs;
 
-namespace Code.Gameplay.Systems
+namespace Code.Gameplay.Systems.BulletSystems
 {
     public sealed class CreatePoolSystem:IEcsInitSystem
     {

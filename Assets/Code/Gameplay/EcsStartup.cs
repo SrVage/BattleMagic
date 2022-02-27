@@ -1,7 +1,9 @@
 using Code.Components;
 using Code.Configs;
 using Code.Gameplay.Systems;
+using Code.Gameplay.Systems.BulletSystems;
 using Code.Gameplay.Systems.EnemySystems;
+using Code.Gameplay.Systems.PlayerSystems;
 using Code.LevelsLoader;
 using Code.StatesSwitcher;
 using Code.StatesSwitcher.Events;
@@ -53,6 +55,7 @@ namespace Code.Gameplay {
                 .Add(new SetTargetSystem())
                 .Add(new SetNavigationSystem())
                 .Add(new AnimationRunSystem())
+                .Add(new DelayEnemySystem())
                 
 
                 .OneFrame<ChangeState> ()

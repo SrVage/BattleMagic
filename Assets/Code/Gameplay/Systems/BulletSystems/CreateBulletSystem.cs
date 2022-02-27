@@ -4,13 +4,13 @@ using Code.Configs;
 using Leopotam.Ecs;
 using UnityEngine;
 
-namespace Code.Gameplay.Systems
+namespace Code.Gameplay.Systems.BulletSystems
 {
     public sealed class CreateBulletSystem:IEcsRunSystem
     {
-        private readonly EcsFilter<AttackPoint, Player> _player;
+        private readonly EcsFilter<AttackPoint, AnimatorEventAttack> _player;
         private readonly EcsFilter<BulletPool> _pool;
-        private readonly EcsFilter<AnimatorEvent> _event;
+        //private readonly EcsFilter<AnimatorEventAttack> _event;
         private readonly BulletsCfg _bulletsCfg;
         private readonly EcsWorld _world;
         private float _reloadTime = 0;
@@ -27,15 +27,9 @@ namespace Code.Gameplay.Systems
 
                 foreach (var pdx in _pool)
                 {
-                    if (_event.IsEmpty())
-                        return;
-
-                    foreach (var x in _event)
-                    {
-                        ref var entity = ref _event.GetEntity(x);
-                        entity.Destroy();
-                        Fire();
-                    }
+                    ref var entity = ref _player.GetEntity(idx);
+                    entity.Del<AnimatorEventAttack>();
+                    Fire();
                 }
 
                 _reloadTime = _bulletsCfg.Bullets[0].ReloadTime;

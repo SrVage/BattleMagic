@@ -4,7 +4,7 @@ using Code.Configs;
 using Leopotam.Ecs;
 using UnityEngine;
 
-namespace Code.Gameplay.Systems
+namespace Code.Gameplay.Systems.PlayerSystems
 {
     public sealed class PlayerMoveSystem:IEcsRunSystem
     {
