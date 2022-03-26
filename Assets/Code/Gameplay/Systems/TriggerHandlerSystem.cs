@@ -14,7 +14,7 @@ namespace Code.Gameplay.Systems
                 ref var attackedEntity = ref _trigger.Get1(idx).Entity;
                 if (!attackedEntity.IsNull())
                 {
-                    if (attackedEntity.Has<HealthPoint>())
+                    if (attackedEntity.Has<HealthPoint>()&&!attackedEntity.Has<Death>())
                     {
                         ref var damage = ref bulletEntity.Get<Damage>().Value;
                         attackedEntity.Get<Damage>().Value = damage;

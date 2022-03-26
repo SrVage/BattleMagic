@@ -5,7 +5,7 @@ namespace Code.Gameplay.Systems.BulletSystems
 {
     public sealed class DamageHealthSystem:IEcsRunSystem
     {
-        private readonly EcsFilter<HealthPoint, Damage> _health;
+        private readonly EcsFilter<HealthPoint, Damage>.Exclude<Death> _health;
         public void Run()
         {
             foreach (var hdx in _health)

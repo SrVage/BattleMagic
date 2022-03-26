@@ -17,4 +17,9 @@ public class AnimatorEventMonoBehaviour : MonoBehaviour
     {
         _entity.Get<AnimatorEventAttack>();
     }
+
+    public void Death()
+    {
+        _entity.Get<Destroy>();
+    }
 }

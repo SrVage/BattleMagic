@@ -6,7 +6,7 @@ namespace Code.Gameplay.Systems.EnemySystems
 {
     public sealed class DelayEnemySystem:IEcsRunSystem
     {
-        private readonly EcsFilter<Delay, Enemy> _enemy = null;
+        private readonly EcsFilter<Delay, Enemy>.Exclude<Death> _enemy = null;
         
         public void Run()
         {

@@ -56,6 +56,7 @@ namespace Code.Gameplay {
                 .Add(new SetNavigationSystem())
                 .Add(new AnimationRunSystem())
                 .Add(new DelayEnemySystem())
+                .Add(new DestroyPlayerSystem())
                 
 
                 .OneFrame<ChangeState> ()

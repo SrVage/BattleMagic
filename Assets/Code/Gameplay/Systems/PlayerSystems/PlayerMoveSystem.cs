@@ -9,7 +9,7 @@ namespace Code.Gameplay.Systems.PlayerSystems
     public sealed class PlayerMoveSystem:IEcsRunSystem
     {
         private const float DeadZone = 0.1f;
-        private readonly EcsFilter<GameObjectRef, Player, Physic> _player;
+        private readonly EcsFilter<GameObjectRef, Player, Physic>.Exclude<Death> _player;
         private readonly EcsFilter<InputMovementVector> _input;
         private readonly PlayerCfg _playerCfg;
         public void Run()
