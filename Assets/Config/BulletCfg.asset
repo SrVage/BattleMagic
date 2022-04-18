@@ -16,3 +16,6 @@ MonoBehaviour:
   - Prefab: {fileID: 5020549259188945553, guid: ed27511340c8d4d3b8ed7adf947c6029, type: 3}
     Damage: 30
     ReloadTime: 1
+  - Prefab: {fileID: 5758671961391143110, guid: 721c0300f8645405daaad082cc6334c3, type: 3}
+    Damage: 5
+    ReloadTime: 3

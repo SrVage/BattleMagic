@@ -1,5 +1,6 @@
 using Code.Components;
 using Leopotam.Ecs;
+using UnityEngine;
 
 namespace Code.Gameplay.Systems
 {
@@ -13,7 +14,7 @@ namespace Code.Gameplay.Systems
         private const string isStanding = "IsStanding";
         private const string Attack = "Attack";
         private const string Death = "Die";
-        
+
         public void Run()
         {
             foreach (var index in _animator)
@@ -23,6 +24,8 @@ namespace Code.Gameplay.Systems
 
                 if (rigidbody.velocity.sqrMagnitude > 0.1f)
                 {
+                    if(_animator.GetEntity(index).Has<Delay>())
+                        continue;
                     animator.SetBool(isStanding, false);
                 }
                 else animator.SetBool(isStanding, true);
@@ -38,6 +41,8 @@ namespace Code.Gameplay.Systems
                 }
                 else
                 {
+                    if(_animatorEnemy.GetEntity(adx).Has<Delay>())
+                        continue;
                     animator.SetBool(isStanding, false);
 
                 }
@@ -49,6 +54,7 @@ namespace Code.Gameplay.Systems
                 if (!_shoot.IsEmpty())
                 {
                     animator.SetTrigger(Attack);
+                    _shoot.GetEntity(sdx).Get<Delay>().Value = Random.Range(1f,3f);
                 }
             }
 

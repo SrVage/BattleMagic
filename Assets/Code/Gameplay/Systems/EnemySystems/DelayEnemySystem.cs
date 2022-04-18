@@ -18,7 +18,6 @@ namespace Code.Gameplay.Systems.EnemySystems
                 {
                     ref var entity = ref _enemy.GetEntity(edx);
                     entity.Del<Delay>();
-                    entity.Get<ChangeGoalTag>();
                 }
             }
         }

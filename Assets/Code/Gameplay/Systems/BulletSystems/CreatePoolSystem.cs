@@ -14,7 +14,7 @@ namespace Code.Gameplay.Systems.BulletSystems
         {
             if (!_pool.IsEmpty())
                 return;
-            BulletPool pool = new BulletPool(10, _bulletsCfg.Bullets[0].Prefab, _world);
+            BulletPool pool = new BulletPool(10, _bulletsCfg.Bullets[0].Prefab, _world, _bulletsCfg.Bullets[1].Prefab);
             ref var bulletPool = ref _world.NewEntity().Get<BulletPool>();
             bulletPool = pool;
         }

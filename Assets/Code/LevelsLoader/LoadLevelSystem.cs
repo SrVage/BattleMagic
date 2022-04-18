@@ -12,6 +12,7 @@ namespace Code.LevelsLoader
     {
         private readonly LevelList _levels;
         private readonly EcsFilter<LoadLevelSignal> _signal;
+        private readonly EcsFilter<ReloadLevelSignal> _reloadSignal;
         private readonly EcsWorld _world;
         private ChangeLevelService _changeLevelService;
         private AsyncOperationHandle<GameObject> _level;
@@ -23,11 +24,12 @@ namespace Code.LevelsLoader
 
         public async void Run()
         {
-            if (_signal.IsEmpty()) return;
+            if (_signal.IsEmpty()&&_reloadSignal.IsEmpty()) return;
             if (_level.IsValid())
             {
                 Addressables.ReleaseInstance(_level);
-                _changeLevelService.ChangeLevel();
+                if (!_signal.IsEmpty())
+                    _changeLevelService.ChangeLevel();
             }
             _level = Addressables.InstantiateAsync(_levels.Levels[_changeLevelService.CurrentLevel%_levels.Levels.Count]);
             await _level.Task;

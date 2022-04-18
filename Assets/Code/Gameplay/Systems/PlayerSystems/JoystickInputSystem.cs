@@ -9,6 +9,7 @@ namespace Code.Gameplay.Systems.PlayerSystems
         private const string Horizontal = "Horizontal";
         private const string Vertical = "Vertical";
         private const string Attack = "Attack";
+        private const string Freeze = "Freeze";
 
         private readonly EcsWorld _world;
 
@@ -17,9 +18,12 @@ namespace Code.Gameplay.Systems.PlayerSystems
             float xAxis = SimpleInput.GetAxis(Horizontal);
             float yAxis = SimpleInput.GetAxis(Vertical);
             var attack = SimpleInput.GetButton(Attack);
+            var freeze = SimpleInput.GetButton(Freeze);
             _world.NewEntity().Get<InputMovementVector>().Value = new Vector2(xAxis, yAxis);
             if (attack)
                 _world.NewEntity().Get<Attack>();
+            if (freeze)
+                _world.NewEntity().Get<Freeze>();
         }
     }
 }

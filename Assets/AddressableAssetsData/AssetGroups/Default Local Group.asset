@@ -21,8 +21,8 @@ MonoBehaviour:
     m_Address: Level1
     m_ReadOnly: 0
     m_SerializedLabels: []
-  - m_GUID: 7b36845395d074543b76662d6d475322
-    m_Address: Level2
+  - m_GUID: dd9135b7aea5e4f1a8b14933833a7fe2
+    m_Address: Assets/Prefabs/Levels/Level2.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
   m_ReadOnly: 0

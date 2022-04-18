@@ -16,6 +16,7 @@ namespace Code.Gameplay.Systems.BulletSystems
             foreach (var pdx in _pool)
             {
                 ref var pool = ref _pool.Get1(pdx).Value;
+                ref var alternative = ref _pool.Get1(pdx).Alternative;
                 foreach (var rdx in _return)
                 {
                     ref var entity = ref _return.GetEntity(rdx);
@@ -24,7 +25,10 @@ namespace Code.Gameplay.Systems.BulletSystems
                     physic.velocity = Vector3.zero;
                     entity.Del<PoolReturn>();
                     entity.Get<InPool>();
-                    pool.ReturnToPool(gameObject);
+                    if (entity.Has<FreezeTag>())
+                        alternative.ReturnToPool(gameObject);
+                    else
+                        pool.ReturnToPool(gameObject);
                 }
             }
         }

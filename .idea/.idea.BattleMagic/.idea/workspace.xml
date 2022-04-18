@@ -3,15 +3,34 @@
   <component name="ChangeListManager">
     <list default="true" id="f430fada-fc8b-46bf-8f08-4f337e69396a" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.BattleMagic/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BattleMagic/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Character/Character.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Character/Character.controller" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Character/Standing React Death Forward.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Character/Standing React Death Forward.fbx.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/Default Local Group.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/Default Local Group.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Components/BulletPool.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Components/BulletPool.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Components/ChangeGoalTag.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Components/ChangeGoalTag.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Components/Target.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Components/Target.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Configs/UIScreen.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Configs/UIScreen.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Code/Gameplay/EcsStartup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Gameplay/EcsStartup.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Gameplay/Systems/BulletSystems/DamageHealthSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Gameplay/Systems/BulletSystems/DamageHealthSystem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Gameplay/Systems/AnimationRunSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Gameplay/Systems/AnimationRunSystem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Gameplay/Systems/BulletSystems/CreateBulletSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Gameplay/Systems/BulletSystems/CreateBulletSystem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Gameplay/Systems/BulletSystems/CreatePoolSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Gameplay/Systems/BulletSystems/CreatePoolSystem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Gameplay/Systems/BulletSystems/ReturnInPoolSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Gameplay/Systems/BulletSystems/ReturnInPoolSystem.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Code/Gameplay/Systems/EnemySystems/DelayEnemySystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Gameplay/Systems/EnemySystems/DelayEnemySystem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Gameplay/Systems/PlayerSystems/PlayerMoveSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Gameplay/Systems/PlayerSystems/PlayerMoveSystem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Gameplay/Systems/TriggerHandlerSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Gameplay/Systems/TriggerHandlerSystem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/MonoBehavioursComponent/AnimatorEventMonoBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/MonoBehavioursComponent/AnimatorEventMonoBehaviour.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Logs/AssetImportWorker0-prev.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Gameplay/Systems/EnemySystems/FindPlayerSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Gameplay/Systems/EnemySystems/FindPlayerSystem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Gameplay/Systems/EnemySystems/SetNavigationSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Gameplay/Systems/EnemySystems/SetNavigationSystem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Gameplay/Systems/EnemySystems/SetTargetSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Gameplay/Systems/EnemySystems/SetTargetSystem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Gameplay/Systems/PlayerSystems/JoystickInputSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Gameplay/Systems/PlayerSystems/JoystickInputSystem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/LevelsLoader/LoadLevelSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/LevelsLoader/LoadLevelSystem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/MonoBehavioursComponent/EnemyMonoBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/MonoBehavioursComponent/EnemyMonoBehaviour.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/UI/Systems/ChangeScreenSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/UI/Systems/ChangeScreenSystem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Config/BulletCfg.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Config/BulletCfg.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Config/EnemyCfg.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Config/EnemyCfg.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Config/LevelList.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Config/LevelList.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Config/UIScreen.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Config/UIScreen.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Characters/enemy.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Characters/enemy.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Levels/Level2.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Levels/Level2.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Levels/Level2.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Levels/Level2.prefab.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Levels/NavMesh-Level1.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Levels/NavMesh-Level1.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/GameplayScreen.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/GameplayScreen.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Logs/AssetImportWorker0.log" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/AssetImportWorker0.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Logs/Packages-Update.log" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/Packages-Update.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
@@ -97,6 +116,8 @@
       <workItem from="1645346218779" duration="4154000" />
       <workItem from="1645953183830" duration="3467000" />
       <workItem from="1648280498687" duration="1712000" />
+      <workItem from="1650191716395" duration="7796000" />
+      <workItem from="1650249495372" duration="2140000" />
     </task>
     <servers />
   </component>

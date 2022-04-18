@@ -3,16 +3,14 @@ using Code.Abstractions;
 using Code.Components;
 using Leopotam.Ecs;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace Code.Gameplay.Systems.EnemySystems
 {
     public class FindPlayerSystem:IEcsRunSystem
     {
-        private const int VisibleDistance = 25;
-        private const int BackVisibleDistance = 5;
-        private const float DelayTimeFind = 0.1f;
-        private const float DelayTimeLost = 5f;
-        private readonly EcsFilter<GameObjectRef, Enemy>.Exclude<Delay,Death> _enemy;
+        private const int VisibleDistance = 15;
+        private readonly EcsFilter<GameObjectRef, Enemy>.Exclude<Death> _enemy;
         private readonly EcsFilter<GameObjectRef, Player>.Exclude<Death> _player;
         
         public void Run()
@@ -24,35 +22,20 @@ namespace Code.Gameplay.Systems.EnemySystems
                 {
                     ref var playerTransform = ref _player.Get1(pdx).Transform;
                     var vectorDirection = CalculateBetweenVector(playerTransform, enemyTransform, out Vector3 normalize);
-                    if (vectorDirection.sqrMagnitude < VisibleDistance)
+                    ref var entity = ref _enemy.GetEntity(edx);
+                    if (vectorDirection.sqrMagnitude < VisibleDistance+Random.Range(0,5) &&
+                        Vector3.Dot(normalize, enemyTransform.forward) > 0)
                     {
-                        ref var entity = ref _enemy.GetEntity(edx);
-                        if (vectorDirection.sqrMagnitude < VisibleDistance / 2 &&
-                            Vector3.Dot(normalize, enemyTransform.forward) > 0)
+                        if (!entity.Has<Delay>())
                         {
+                            enemyTransform.LookAt(playerTransform);
+                            enemyTransform.Rotate(0, Random.Range(-5f, 5f), 0);
                             entity.Get<StartShooting>();
-                            entity.Get<Delay>().Value = DelayTimeLost;
-                        }
-                        if (Vector3.Dot(normalize, enemyTransform.forward) > 0 || vectorDirection.sqrMagnitude < BackVisibleDistance)
-                        {
-                            entity.Get<Follow>().Value = playerTransform;
-                            entity.Get<Delay>().Value = DelayTimeFind;
-                            //entity.Del<Finish>();
-                            //entity.Get<Target>().Value = playerTransform.position;
-                        }
-                        else
-                        {
-                            entity.Del<Follow>();
-                            entity.Get<Delay>().Value = DelayTimeLost;
-                            //entity.Del<Finish>();
                         }
                     }
                     else
                     {
-                        ref var entity = ref _enemy.GetEntity(edx);
-                        entity.Del<Follow>();
-                        entity.Get<Delay>().Value = DelayTimeLost;
-                        //entity.Del<Finish>();
+                        entity.Del<StartShooting>();
                     }
                 }
             }

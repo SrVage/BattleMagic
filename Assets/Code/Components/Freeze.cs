@@ -2,7 +2,7 @@ using Leopotam.Ecs;
 
 namespace Code.Components
 {
-    public struct ChangeGoalTag:IEcsIgnoreInFilter
+    public struct Freeze:IEcsIgnoreInFilter
     {
         
     }

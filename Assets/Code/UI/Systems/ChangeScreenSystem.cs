@@ -38,13 +38,13 @@ namespace Code.UI.Systems
                         StartScreen(_uiScreen.WinScreen, true);
                         break;
                     case GameStates.LoseState:
+                        StartScreen(_uiScreen.LooseScreen, true);
                         break;
                     case GameStates.NextLevelStates:
                         break;
                     case GameStates.RestartStates:
                         break;
                     case GameStates.ConfigStates:
-                        StartScreen(_uiScreen.ConfigScreen, true);
                         break;
                         
                     default:
